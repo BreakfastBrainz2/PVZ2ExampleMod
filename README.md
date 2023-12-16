@@ -1,5 +1,9 @@
 # **Example Mod for PvZ2**
 
+# Credits
+
+[Smali lib loader](https://github.com/joeyjurjens/Android-Hooking-Template) by **joeyjurjens** 
+
 # What is this?
 
 Example Mod is an example of how function hooking (using [Cydia Substrate](http://www.cydiasubstrate.com/)) can be utilized in PvZ2. All of the addresses and function definitions are from PvZ2 9.4.1's ARM-v7a lib.  
