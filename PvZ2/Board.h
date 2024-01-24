@@ -1,5 +1,4 @@
 #pragma once
-#include "../SexyTypes.h"
 
 #define GRID_TILE_WIDTH 64.0f
 
