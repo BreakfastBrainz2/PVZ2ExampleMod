@@ -10,5 +10,6 @@
     <ClInclude Include="memUtils.h" />
     <ClInclude Include="Logging.h" />
     <ClInclude Include="SexyTypes.h" />
+    <ClInclude Include="PvZ2\Board.h" />
   </ItemGroup>
 </Project>

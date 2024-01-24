@@ -27,7 +27,7 @@
 
     invoke-direct {v1}, Lcom/loadLib/libLoader$1;-><init>()V
 
-    const-wide/16 v2, 0x9c4
+    const-wide/16 v2, 0x1
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 

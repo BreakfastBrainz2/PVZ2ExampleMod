@@ -111,7 +111,11 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>C:\Users\brekko\AppData\Local\Android\Sdk\extras\saurikit\cydia_substrate;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>C:\Users\brekko\AppData\Local\Android\Sdk\extras\saurikit\cydia_substrate\lib\armeabi;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -192,6 +196,7 @@
     <ClInclude Include="Logging.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="memUtils.h" />
+    <ClInclude Include="PvZ2\Board.h" />
     <ClInclude Include="SexyTypes.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
