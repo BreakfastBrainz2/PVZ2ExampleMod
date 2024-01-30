@@ -201,6 +201,32 @@ void* hkBoardCtor(Board* board)
 
 #pragma endregion
 
+#pragma region Dumb Hardcoded Immunities (Healer/Magician)
+
+// we don't need to save a pointer to the original functions
+uint dispose;
+
+void hkMagicianHealerConditionFunc(int a1, int condition)
+{
+    // Hardcoded immunity checks would go here
+    return;
+}
+
+bool hkMagicianHealerImmuneToShrink(int a1)
+{
+    // true = immune to shrinking
+    return false;
+}
+
+bool hkMagicianInitializeFamilyImmunities(int a1, int64_t a2)
+{
+    typedef bool(*zFamilyFunc)(int);
+    zFamilyFunc func = (zFamilyFunc)getActualOffset(0x8C70A0); // function 93 in Zombie's vftable 
+    return func(a1);
+}
+
+#pragma endregion
+
 __attribute__((constructor))
 // This is automatically executed when the lib is loaded
 // Run your initialization code here
@@ -219,6 +245,11 @@ void libPVZ2ExampleMod_main()
     PVZ2HookFunction(0x890108, (void*)hkInitZombiePianoList, (void**)&oInitZombiePianoList, "ZombiePiano::getTypenameList");
     PVZ2HookFunction(0x127415C, (void*)HkReinitForSurfaceChange, (void**)&oRFSC, "ReinitForSurfaceChanged");
     PVZ2HookFunction(0x71A004, (void*)hkBoardCtor, (void**)&oBoardCtor, "Board::Board");
+    PVZ2HookFunction(0x884B6C, (void*)hkMagicianHealerImmuneToShrink, (void**)&dispose, "ZombieCarnieMagician::IsImmuneToShrink");
+    PVZ2HookFunction(0x881C4C, (void*)hkMagicianHealerImmuneToShrink, (void**)&dispose, "ZombieRomanHealer::IsImmuneToShrink");
+    PVZ2HookFunction(0x86CCAC, (void*)hkMagicianHealerConditionFunc, (void**)&dispose, "ZombieCarnieMagician::ConditionFunc");
+    PVZ2HookFunction(0x84EAA0, (void*)hkMagicianHealerConditionFunc, (void**)&dispose, "ZombieRomanHealer::ConditionFunc");
+    PVZ2HookFunction(0x86CCC0, (void*)hkMagicianInitializeFamilyImmunities, (void**)&dispose, "ZombieRomanHealer::InitializeFamilyImmunities");
 
     LOGI("Finished initializing");
 }
