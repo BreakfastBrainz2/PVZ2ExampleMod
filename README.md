@@ -6,7 +6,10 @@
 
 # What is this?
 
-Example Mod is an example of how function hooking (using [Cydia Substrate](http://www.cydiasubstrate.com/)) can be utilized in PvZ2. All of the addresses and function definitions are from PvZ2 9.4.1's ARM-v7a lib.  
+Example Mod is an example of how function hooking (using [Cydia Substrate](http://www.cydiasubstrate.com/)) can be utilized in PvZ2. All of the addresses and function definitions are from PvZ2 9.4.1's ARM-v7a lib.
+
+Update 1/10/2025: I've seen people perpetuating the myth that code injection is "unstable" - it's not. The only way for code injection to become unstable is if the code you inject is buggy. 
+Please don't let this myth deter you from potentially using code injection in your mod.
 
 # Current Features
 
